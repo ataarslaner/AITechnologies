@@ -5,17 +5,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Professional white + dark navy palette.
+        // Backgrounds = paper (white / off-white), text = ink (deep navy).
+        paper: {
+          DEFAULT: "#FFFFFF", // page background, pure white
+          warm: "#F6F8FB",    // subtle section background, hint of cool
+          deep: "#EAEFF6",    // deeper card / decorative blocks
+          pure: "#FFFFFF",
+        },
         ink: {
-          950: "#07080B",
-          900: "#0B0D12",
-          800: "#11141B",
-          700: "#1A1E27",
-          600: "#262B37",
+          DEFAULT: "#0A1F44", // brand navy, primary text
+          950: "#06122A",
+          900: "#0A1F44",
+          800: "#10254F",
+          700: "#1A335F",
+          600: "#2A4373",
+          500: "#56678C",
+          300: "#A4B0C8",
         },
         accent: {
-          DEFAULT: "#E11D48",
-          soft: "#F43F5E",
-          glow: "#FB7185",
+          DEFAULT: "#0A1F44", // accent matches navy for unity
+          soft: "#1F3A78",
+          deep: "#06122A",
+          glow: "#D7E0F2",
         },
         sand: "#F5F1EA",
       },
@@ -29,7 +41,7 @@ const config: Config = {
       },
       backgroundImage: {
         "grid-fade":
-          "radial-gradient(ellipse at top, rgba(244,63,94,0.18), transparent 60%)",
+          "radial-gradient(ellipse at top, rgba(10,31,68,0.10), transparent 60%)",
       },
     },
   },

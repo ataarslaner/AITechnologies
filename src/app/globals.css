@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
+  --paper: #FFFFFF;
+  --ink: #0A1F44;
 }
 
 html,
 body {
-  background: #07080B;
-  color: #F5F1EA;
+  background: var(--paper);
+  color: var(--ink);
 }
 
 body {
@@ -19,22 +21,31 @@ body {
 }
 
 ::selection {
-  background: rgba(244, 63, 94, 0.35);
-  color: #fff;
+  background: rgba(10, 31, 68, 0.18);
+  color: #FFFFFF;
 }
 
+/* Hero backdrop: soft navy glow + faint grid */
 .bg-noise {
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(244, 63, 94, 0.18), transparent 60%),
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(10, 31, 68, 0.10), transparent 60%),
+    linear-gradient(rgba(10, 31, 68, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 68, 0.05) 1px, transparent 1px);
   background-size: auto, 56px 56px, 56px 56px;
   background-position: center top, center, center;
 }
 
+/* Subtle paper grain dot pattern */
+.paper-grain {
+  background-image:
+    radial-gradient(rgba(10, 31, 68, 0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+/* Light glass: cool translucent panel */
 .glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(246, 248, 251, 0.75));
+  border: 1px solid rgba(10, 31, 68, 0.10);
   backdrop-filter: blur(8px);
 }
 
@@ -47,7 +58,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.22em;
   font-size: 11px;
-  color: #FB7185;
+  color: #0A1F44;
 }
 
 @keyframes float {

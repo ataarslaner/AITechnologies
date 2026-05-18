@@ -24,12 +24,12 @@ export function Section({
           </div>
           <div className="md:col-span-8">
             {title && (
-              <h2 className="font-display text-4xl leading-[1.05] tracking-tightest text-balance text-white sm:text-5xl">
+              <h2 className="font-display text-4xl leading-[1.05] tracking-tightest text-balance text-ink sm:text-5xl">
                 {title}
               </h2>
             )}
             {intro && (
-              <p className="mt-5 max-w-2xl text-base text-white/70 sm:text-lg">
+              <p className="mt-5 max-w-2xl text-base text-ink-500 sm:text-lg">
                 {intro}
               </p>
             )}

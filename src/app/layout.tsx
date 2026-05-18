@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { brand } from "@/lib/brand";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
 
 const sans = Inter({
   subsets: ["latin"],
@@ -26,18 +24,10 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${brand.name} — ${brand.tagline}`,
+    default: brand.name,
     template: `%s · ${brand.name}`,
   },
-  description: brand.promise,
   metadataBase: new URL(`https://${brand.domain}`),
-  openGraph: {
-    title: `${brand.name} — ${brand.tagline}`,
-    description: brand.promise,
-    url: `https://${brand.domain}`,
-    siteName: brand.name,
-    type: "website",
-  },
 };
 
 export default function RootLayout({
@@ -46,14 +36,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${sans.variable} ${display.variable} ${mono.variable}`}
-    >
-      <body className="min-h-screen bg-ink-950 font-sans text-sand antialiased selection:bg-accent/40">
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
+    <html className={`${sans.variable} ${display.variable} ${mono.variable}`}>
+      <body className="min-h-screen bg-paper font-sans text-sand antialiased selection:bg-accent/40">
+        {children}
       </body>
     </html>
   );
